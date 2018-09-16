@@ -5,6 +5,7 @@ var { mongoose } = require("./db/mongoose.js");
 var { Vetted } = require("./models/vetted");
 
 var app = express();
+var port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
@@ -51,6 +52,6 @@ app.get("/vetted/:id", (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-  console.log("App Running at 3000 PORT");
+app.listen(port, () => {
+  console.log(`App Running at ${port}`);
 });
