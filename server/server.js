@@ -11,7 +11,23 @@ app.use(bodyParser.json());
 
 app.post("/vetted", (req, res) => {
   var vetted = new Vetted({
-    fname: req.body.fname
+    fname: req.body.fname,
+    lname: req.body.lname,
+    email: req.body.email,
+    skills: [{ label: req.body.label, value: req.body.value }],
+    sex: req.body.sex,
+    country: { label: req.body.label, value: req.body.value },
+    hasEmail: req.body.hasEmail,
+    files: [
+      {
+        preview: req.body.preview,
+        name: req.body.name,
+        lastModified: req.body.lastModified,
+        lastModifiedDate: req.body.lastModified,
+        webKitRelativePath: req.body.webKitRelativePath
+      }
+    ],
+    content: req.body.content
   });
 
   vetted.save().then(
