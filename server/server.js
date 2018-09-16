@@ -1,6 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
+var { ObjectID } = require("mongodb");
 var { mongoose } = require("./db/mongoose.js");
 var { Vetted } = require("./models/vetted");
 
@@ -32,6 +32,23 @@ app.get("/vetted", (req, res) => {
       res.status(400).send(e);
     }
   );
+});
+
+app.get("/vetted/:id", (req, res) => {
+  var id = req.params.id;
+  if (!ObjectID.isValid(id)) {
+    return res.status(404).send();
+  }
+  Vetted.findById(id)
+    .then(vet => {
+      if (!vet) {
+        return res.status(404).send();
+      }
+      res.send({ vet });
+    })
+    .catch(e => {
+      res.status(400).send();
+    });
 });
 
 app.listen(3000, () => {
