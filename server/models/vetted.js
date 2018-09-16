@@ -4,7 +4,7 @@ var Vetted = mongoose.model("Vetted", {
   fname: { type: String },
   lname: { type: String },
   email: { type: String },
-  skills: [(type: Array), { label: String, value: String }],
+  skills: [{ label: String, value: String }],
   sex: { type: String },
   country: [{ label: String, value: String }],
   hasEmail: Boolean,
