@@ -6,7 +6,7 @@ var Vetted = mongoose.model("Vetted", {
   email: { type: String },
   skills: [{ label: String, value: String }],
   sex: { type: String },
-  country: { label: String, value: String },
+  country: { label: { type: String }, value: { type: String } },
   hasEmail: Boolean,
   files: [
     {
