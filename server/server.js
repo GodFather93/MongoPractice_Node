@@ -23,6 +23,17 @@ app.post("/vetted", (req, res) => {
   );
 });
 
+app.get("/vetted", (req, res) => {
+  Vetted.find().then(
+    vet => {
+      res.send({ vet });
+    },
+    e => {
+      res.status(400).send(e);
+    }
+  );
+});
+
 app.listen(3000, () => {
   console.log("App Running at 3000 PORT");
 });
