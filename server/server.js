@@ -20,11 +20,11 @@ app.post("/vetted", (req, res) => {
     hasEmail: req.body.hasEmail,
     files: [
       {
-        preview: req.body.files.preview,
-        name: req.body.files.name,
-        lastModified: req.body.files.lastModified,
-        lastModifiedDate: req.body.files.lastModified,
-        webKitRelativePath: req.body.files.webKitRelativePath
+        preview: req.body.preview,
+        name: req.body.name,
+        lastModified: req.body.lastModified,
+        lastModifiedDate: req.body.lastModified,
+        webKitRelativePath: req.body.webKitRelativePath
       }
     ],
     content: req.body.content
