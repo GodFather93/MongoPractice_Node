@@ -14,17 +14,17 @@ app.post("/vetted", (req, res) => {
     fname: req.body.fname,
     lname: req.body.lname,
     email: req.body.email,
-    skills: [{ label: req.body.label, value: req.body.value }],
+    skills: [{ label: req.body.skills.label, value: req.body.skills.value }],
     sex: req.body.sex,
     country: { label: req.body.country.label, value: req.body.country.value },
     hasEmail: req.body.hasEmail,
     files: [
       {
-        preview: req.body.preview,
-        name: req.body.name,
-        lastModified: req.body.lastModified,
-        lastModifiedDate: req.body.lastModified,
-        webKitRelativePath: req.body.webKitRelativePath
+        preview: req.body.files.preview,
+        name: req.body.files.name,
+        lastModified: req.body.files.lastModified,
+        lastModifiedDate: req.body.files.lastModified,
+        webKitRelativePath: req.body.files.webKitRelativePath
       }
     ],
     content: req.body.content
