@@ -14,7 +14,7 @@ app.post("/vetted", (req, res) => {
     fname: req.body.fname,
     lname: req.body.lname,
     email: req.body.email,
-    skills: [{ label: req.body.skills.label, value: req.body.skills.value }],
+    skills: [{ label: req.body.label, value: req.body.value }],
     sex: req.body.sex,
     country: { label: req.body.country.label, value: req.body.country.value },
     hasEmail: req.body.hasEmail,
